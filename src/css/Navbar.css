@@ -1,0 +1,61 @@
+* {
+    /* line-height: 1.2; */
+    padding: 0;
+    margin: 0;
+}
+
+#navbarTogglerDemo01 {
+    justify-content: space-evenly;
+    /* background-color: aqua; */
+}
+
+#navbarTogglerDemo01 li a {
+    padding-left: 10px;
+}
+
+#form {
+    height: 40rem;
+    width: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* line-height: 1.7rem; */
+    flex-wrap: wrap;
+}
+
+#frame {
+    display: flex;
+    justify-content: center;
+}
+
+#form div {
+    width: 100%;
+
+}
+
+.PopUp {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 5rem 0;
+    align-items: center;
+
+}
+
+#container {
+    border-radius: 1rem;
+    width: 25rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: rgb(231, 250, 246);
+}
+
+#dialogue {
+    text-align: center;
+    padding-top: 0.8rem;
+}
+
+#action {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
