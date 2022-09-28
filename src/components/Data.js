@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import Popup from './Popup';
-import EmpDetails from './EmpDetails';
 const Data = ({ item, deleteEmployee }) => {
 
     const [onDelete, setOnDelete] = useState(false)
@@ -38,7 +37,7 @@ const Data = ({ item, deleteEmployee }) => {
                                             }}
                                         >Delete</Link>
  
-                                        <Link className="btn btn-primary ml-8 "  to={`/emp/${item.id}`} 
+                                       &nbsp; <Link className="btn btn-primary ml-8 "  to={`/emp/${item.id}`} 
 
                                         >View</Link>
                                     </td>

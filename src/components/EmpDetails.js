@@ -10,12 +10,14 @@ const EmpDetails = () => {
         salary: ""
     });
     const { id } = useParams();
+
     useEffect(() => {
         ShowEmployees();
     }, []);
     const ShowEmployees = async () => {
-        const res = await axios.get(`http://localhost:3000/emp/${id}`);
+        const res = await axios.get(`http://localhost:3003/emp/${id}`);
         setEmployees(res.data);
+        console.log(res.data);
     };
 
     return (

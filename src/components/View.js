@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Suspense, useRef } from 'react'
 import axios from 'axios';
-import { Link } from "react-router-dom";
 import SkeletonCard from './SkeletonCard';
 
 const Data = React.lazy(() => import("./Data.js"))
@@ -10,7 +9,6 @@ const View = () => {
   const searchRan = useRef(false);
 
   const [employee, setEmployees] = useState([]);
-  const [isloading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearch = (e) => {
@@ -21,11 +19,9 @@ const View = () => {
     console.log("effect ran");
     if (effectRan.current === false) {
       showData();
-      setLoading(false)
     }
 
     return () => {
-      console.log('unmounted parent')
       effectRan.current = true
 
     }
@@ -49,7 +45,6 @@ const View = () => {
         axios.get(`http://localhost:3003/emp?name=${searchInput}`)
           .then((response) => {
             setEmployees(response.data)
-            setLoading(false)
           }).catch((err) => console.error("Incorrect Data"))
       ) : (
         showData()
@@ -69,17 +64,12 @@ const View = () => {
               placeholder='Search here...'
               onChange={handleSearch}
             />
+            &nbsp;&nbsp;&nbsp;
             <button className="btn btn-primary mr-2" onClick={filterData}>
               Search
             </button>
 
           </div>
-
-          {/* {isloading ? (
-            <SkeletonCard />
-          ) : (
-            <Data key={employee.id} item={employee} deleteEmployee={deleteEmployee} />
-          )} */}
 
           <Suspense fallback={<SkeletonCard />}>
             <Data key={employee.id} item={employee} deleteEmployee={deleteEmployee} />
