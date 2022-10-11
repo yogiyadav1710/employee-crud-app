@@ -10,26 +10,30 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Add from './components/Add';
 import View from './components/View';
 import EmpDetails from './components/EmpDetails';
+import { Scroll } from './components/Scroll';
+import ScrollApp from './Pagination/ScrollApp';
 
 function App() {
 
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route exact path='/' element={<View />} />
-          {/* <Route exact path='/home' element={<Home />} /> */}
-          <Route exact path='/add' element={<Add />} />
-          <Route exact path='/view' element={<View />} />
-          <Route  path='/emp/:id' element={<EmpDetails />} />
+    // <BrowserRouter>
+    //   <div className="App">
+    //     <Navbar />
+    //     <Routes>
+    //       <Route exact path='/' element={<View />} />
+    //       {/* <Route exact path='/home' element={<Home />} /> */}
+    //       <Route exact path='/add' element={<Add />} />
+    //       <Route exact path='/view' element={<View />} />
+    //       <Route  path='/emp/:id' element={<EmpDetails />} />
 
-        </Routes>
-      </div>
+    //     </Routes>
+    //   </div>
 
 
-    </BrowserRouter >
+    // </BrowserRouter >
+
+    <ScrollApp/>
   );
 }
 
